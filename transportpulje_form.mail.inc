@@ -177,6 +177,32 @@ function _transportpulje_form_build_mail_followup(EntityMetadataWrapper $wrapper
   $application .= $wrapper->field_tpf_address->value();
   $application .= '<br/>';
 
+  $application .= '</p>';
+
+  $application .= '<h3>';
+  $application .= t('Transport information', array(), array('langcode' => $language->language));
+  $application .= ':</h3>';
+
+  $application .= '<p>';
+
+  $application .= '<strong>';
+  $application .= t('Expenses', array(), array('langcode' => $language->language));
+  $application .= ':</strong> ';
+  $application .= 'kr. ' . $wrapper->field_tpf_expense->value();
+  $application .= '<br/>';
+
+  $application .= '<strong>';
+  $application .= t('Participants', array(), array('langcode' => $language->language));
+  $application .= ':</strong> ';
+  $application .= $wrapper->field_tpf_participants->value();
+  $application .= '<br/>';
+
+  $application .= '<strong>';
+  $application .= t('Date', array(), array('langcode' => $language->language));
+  $application .= ':</strong> ';
+  $application .= date('d/m/Y', $wrapper->field_tpf_date->value());
+  $application .= '<br/>';
+
 
   return $application;
 }
