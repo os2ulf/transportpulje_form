@@ -276,6 +276,7 @@ function transportpulje_form_secure_permissions($role) {
     ),
     'editor' => array(
       'administer tpf',
+      'assign transport pool editor role',
       'view any entityform',
       'edit any entityform',
       'delete any entityform',
