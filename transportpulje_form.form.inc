@@ -340,7 +340,7 @@ function _transportpulje_form_calculate_conditions(array $form, array &$form_sta
   $passed = FALSE;
 
   // If part one has form errors return without doing anything else.
-  if (!empty(form_get_errors())) {  
+  if (!empty(form_get_errors())) {
     $form_state['rebuild'] = TRUE;
     return $form['fields']['part_two'];
   }
@@ -607,6 +607,9 @@ function _tpf_validate_all_required(array $form_state) {
   unset($form_state['values']['institution_grade']);
   unset($form_state['values']['description']);
   unset($form_state['values']['distance_calc_failed']);
+
+  // Prevent honeypot from submitting this form
+  unset($form_state['values']['url']);
 
   foreach ($form_state['values'] as $key => $value) {
     if (empty($value) && $value != '0') {
