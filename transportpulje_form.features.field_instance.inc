@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * transportpulje_form.features.field_instance.inc
@@ -211,6 +212,7 @@ function transportpulje_form_field_default_field_instances() {
         'label' => 'above',
         'module' => 'date',
         'settings' => array(
+          'custom_date_format' => '',
           'format_type' => 'long',
           'fromto' => 'both',
           'multiple_from' => '',
@@ -735,54 +737,6 @@ function transportpulje_form_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-course-field_tpf_in_list'.
-  $field_instances['node-course-field_tpf_in_list'] = array(
-    'bundle' => 'course',
-    'default_value' => array(
-      0 => array(
-        'value' => 0,
-      ),
-    ),
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 32,
-      ),
-      'full' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_tpf_in_list',
-    'label' => 'Omfattet af arrangementskørselslisten',
-    'required' => 0,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(
-        'display_label' => 1,
-      ),
-      'type' => 'options_onoff',
-      'weight' => 20,
-    ),
-  );
-
   // Exported field_instance: 'node-course-field_tpf_who_get_support'.
   $field_instances['node-course-field_tpf_who_get_support'] = array(
     'bundle' => 'course',
@@ -1021,7 +975,6 @@ function transportpulje_form_field_default_field_instances() {
   t('Institution');
   t('Jeg kunne ikke finde forløbet ');
   t('Navn');
-  t('Omfattet af arrangementskørselslisten');
   t('Parent term');
   t('Privat/kommunal');
   t('Status');

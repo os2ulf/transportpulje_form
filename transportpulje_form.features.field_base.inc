@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * transportpulje_form.features.field_base.inc
@@ -232,7 +233,11 @@ function transportpulje_form_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_tpf_date',
-    'indexes' => array(),
+    'indexes' => array(
+      'value' => array(
+        0 => 'value',
+      ),
+    ),
     'locked' => 0,
     'module' => 'date',
     'settings' => array(
@@ -393,36 +398,14 @@ function transportpulje_form_field_default_field_bases() {
         'grade_8' => '8. klasse',
         'grade_9' => '9. klasse',
         'grade_10' => '10. klasse',
+        'special_in' => 'Specialklasse indskoling',
+        'special_intermediate' => 'Specialklasse mellemtrin',
+        'special_out' => 'Specialklasse udskoling',
       ),
       'allowed_values_function' => '',
     ),
     'translatable' => 0,
     'type' => 'list_text',
-  );
-
-  // Exported field_base: 'field_tpf_in_list'.
-  $field_bases['field_tpf_in_list'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_tpf_in_list',
-    'indexes' => array(
-      'value' => array(
-        0 => 'value',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'list',
-    'settings' => array(
-      'allowed_values' => array(
-        0 => '',
-        1 => '',
-      ),
-      'allowed_values_function' => '',
-    ),
-    'translatable' => 0,
-    'type' => 'list_boolean',
   );
 
   // Exported field_base: 'field_tpf_institution'.

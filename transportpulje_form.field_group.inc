@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * transportpulje_form.field_group.inc
@@ -182,7 +183,6 @@ function transportpulje_form_field_group_info() {
     'label' => 'Transport pool settings',
     'weight' => '17',
     'children' => array(
-      0 => 'field_tpf_in_list',
       1 => 'field_tpf_who_get_support',
       2 => 'field_tpf_exclude',
     ),

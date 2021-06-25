@@ -42,9 +42,6 @@ function _tpf_get_type(array &$form_values) {
   if (_tpf_has_no_district($form_values)) {
     return 'has_no_district';
   }
-  if (_tpf_not_part_of_course_list($form_values)) {
-    return 'not_part_of_course_list';
-  }
   return 'part_of_course_list';
 }
 
@@ -74,7 +71,7 @@ function _tpf_node_is_private(array $form_values) {
       return TRUE;
     }
   }
-  
+
   return FALSE;
 }
 
@@ -174,26 +171,6 @@ function _tpf_has_no_district(array $form_values) {
     $district = $wrapper->field_tpf_district->value();
     // If school (Has district)
     return !isset($district);
-  }
-
-  return FALSE;
-}
-
-/**
- * Check if selected node is not part of course list.
- *
- * @param array $form_values
- *   The values entered in the form.
- *
- * @return bool
- *   True if the node selected is not in course list (boolean field on node).
- */
-function _tpf_not_part_of_course_list(array $form_values) {
-  if (!empty($form_values['course_dropdown'])) {
-    $node_wrapper = entity_metadata_wrapper('node', $form_values['course_dropdown']);
-    $in_list = $node_wrapper->field_tpf_in_list->value();
-    // Requested course is part of courselist. (Checkbox on node)
-    return !$in_list;
   }
 
   return FALSE;
