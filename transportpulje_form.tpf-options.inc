@@ -20,7 +20,7 @@ function _tpf_get_type(array &$form_values) {
     return 'denied_private';
   }
 
-  if ('tpf_school' === $form_values['institution_type'] && 'grade_6' <= $form_values['institution_grade']) {
+  if ('tpf_school' === $form_values['institution_type'] && in_array($form_values['institution_grade'], array('grade_6', 'grade_7', 'grade_8', 'grade_9', 'grade_10'))) {
     $distance = _tpf_get_distance($form_values);
 
     if (is_array($distance) && array_key_exists('scalar', $distance)) {
