@@ -85,6 +85,7 @@ function transportpulje_form_add_application(array $form, array &$form_state) {
   $course_dropdown_default = isset($form_state['values']['course_dropdown']) ? $form_state['values']['course_dropdown'] : '';
   $course_dropdown_suffix = '<div id="course_dropdown_address"></div>';
   $course_dropdown_params = drupal_get_query_parameters();
+
   if (array_key_exists('course_id', $course_dropdown_params)) {
     $course_dropdown_default = $course_dropdown_params['course_id'];
     $course_dropdown_selected_node = node_load($course_dropdown_params['course_id']);
@@ -320,7 +321,10 @@ function transportpulje_form_add_application(array $form, array &$form_state) {
     '#value' => t('Send application'),
     '#weight' => 1,
   );
-
+  $form['#attributes']['autocomplete'] = 'off';
+  $form["fields"]["part_one"]["select_course"]["course_address"]["street"]['#attributes']['autocomplete'] = 'off';
+  $form["fields"]["part_one"]["select_course"]["course_address"]["postal_code"]['#attributes']['autocomplete'] = 'off';
+  $form["fields"]["part_one"]["select_course"]["course_address"]["city"]['#attributes']['autocomplete'] = 'off';
   return $form;
 }
 
