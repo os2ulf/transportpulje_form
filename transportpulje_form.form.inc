@@ -322,9 +322,9 @@ function transportpulje_form_add_application(array $form, array &$form_state) {
     '#weight' => 1,
   );
   $form['#attributes']['autocomplete'] = 'off';
-  $form["fields"]["part_one"]["select_course"]["course_address"]["street"]['#attributes']['autocomplete'] = 'off';
-  $form["fields"]["part_one"]["select_course"]["course_address"]["postal_code"]['#attributes']['autocomplete'] = 'off';
-  $form["fields"]["part_one"]["select_course"]["course_address"]["city"]['#attributes']['autocomplete'] = 'off';
+  $form["fields"]["part_one"]["select_course"]["course_address"]["street"]['#attributes']['autocomplete'] = 'none';
+  $form["fields"]["part_one"]["select_course"]["course_address"]["postal_code"]['#attributes']['autocomplete'] = 'none';
+  $form["fields"]["part_one"]["select_course"]["course_address"]["city"]['#attributes']['autocomplete'] = 'none';
   return $form;
 }
 
