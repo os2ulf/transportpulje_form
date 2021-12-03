@@ -613,7 +613,7 @@ function _tpf_validate_all_required(array $form_state) {
   unset($form_state['values']['distance_calc_failed']);
 
   // Prevent honeypot from submitting this form
-  unset($form_state['values']['url']);
+  unset($form_state['values']['country']);
 
   foreach ($form_state['values'] as $key => $value) {
     if (empty($value) && $value != '0') {
