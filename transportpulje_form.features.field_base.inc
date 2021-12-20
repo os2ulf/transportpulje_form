@@ -605,6 +605,7 @@ function transportpulje_form_field_default_field_bases() {
         'awaiting_distance_calc_failed' => 'Afventer (Afstandsberegning fejlet)',
         'accepted' => 'Godkendt',
         'refused' => 'Afvist',
+        'canceled' => 'Annulleret',
         'closed' => 'Lukket',
       ),
       'allowed_values_function' => '',
